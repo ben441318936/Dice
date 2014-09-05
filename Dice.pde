@@ -6,9 +6,12 @@ void setup()
 }
 void draw()
 {
-	Die bob = new Die(250,250);
-	bob.roll();
-	bob.show();	
+	for(int x=0;x<2;x++)
+	{
+		Die bob = new Die(100+(100*x),100+(100*x));
+		bob.roll();
+		bob.show();	
+	}
 }
 void mousePressed()
 {
@@ -33,6 +36,6 @@ class Die //models one single dice cube
 		fill(0);
 		textSize(20);
 		textAlign(CENTER,CENTER);
-		text(number,250,250);
+		text(number,myX,myY);
 	}
 }
