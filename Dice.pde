@@ -2,13 +2,13 @@ int dieX = 25;
 int dieY = 25;
 int c1 = 0;
 int c2 = 0;
-int numOfDice = 0;
-int diceResult1 = 0;
-int diceResult2 = 0;
-int diceResult3 = 0;
-int diceResult4 = 0;
-int diceResult5 = 0;
-int diceResult6 = 0;
+float numOfDice = 0;
+float diceResult1 = 0;
+float diceResult2 = 0;
+float diceResult3 = 0;
+float diceResult4 = 0;
+float diceResult5 = 0;
+float diceResult6 = 0;
 void setup()
 {
 	size(500,500);
@@ -40,8 +40,15 @@ void draw()
 	}
 	fill(255,255,0);
 	textAlign(CENTER);
-	text("Total Number of Dice = " + numOfDice, 250, 430);
-	text("1 = " + (diceResult1*100/numOfDice) + " percent", 50, 450);
+	text("Total Number of Dice = " + (int)(numOfDice), 250, 430);
+	textAlign(LEFT);
+	text("1 = " + ((int)(diceResult1/numOfDice*100)) + " percent", 100, 450);
+	text("")
+	text("2 = " + ((int)(diceResult2/numOfDice*100)) + " percent", 100, 460);
+	text("3 = " + ((int)(diceResult3/numOfDice*100)) + " percent", 100, 470);
+	text("4 = " + ((int)(diceResult4/numOfDice*100)) + " percent", 312, 450);
+	text("5 = " + ((int)(diceResult5/numOfDice*100)) + " percent", 312, 460);
+	text("6 = " + ((int)(diceResult6/numOfDice*100)) + " percent", 312, 470);
 }
 void mousePressed()
 {
