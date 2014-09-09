@@ -17,19 +17,7 @@ void setup()
 }
 void draw()
 {
-	//frameRate(3);
 	background(0);
-	c1 = 0;
-	c2 = 0;
-	dieX = 25;
-	dieY = 25;
-	numOfDice = 0;
-	diceResult1 = 0;
-	diceResult2 = 0;
-	diceResult3 = 0;
-	diceResult4 = 0;
-	diceResult5 = 0;
-	diceResult6 = 0;
 	for(int n=0;n<20;n++)
 	{
 		
@@ -52,30 +40,29 @@ void draw()
 	}
 	fill(255,255,0);
 	textAlign(CENTER);
-	text("Total Number of Dice = " + (int)(numOfDice), 250, 410);
-	text("Sum of Results = " + (int)((diceResult1*1)+(diceResult2*2)+(diceResult3*3)+(diceResult4*4)+(diceResult5*5)+(diceResult6*6)), 250, 425);
-	text((int)(diceResult1/numOfDice*100),127,450);
-	text((int)(diceResult2/numOfDice*100),127,460);
-	text((int)(diceResult3/numOfDice*100),127,470);
-	text((int)(diceResult4/numOfDice*100),339,450);
-	text((int)(diceResult5/numOfDice*100),339,460);
-	text((int)(diceResult6/numOfDice*100),339,470);
+	text("Total Number of Dice = " + (int)(numOfDice), 250, 430);
 	textAlign(LEFT);
-	text("1 = ", 100, 450);
-	text("percent", 137,450);
-	text("2 = ", 100, 460);
-	text("percent", 137,460);
-	text("3 = ", 100, 470);
-	text("percent", 137,470);
-	text("4 = ", 312, 450);
-	text("percent", 349,450);
-	text("5 = ", 312, 460);
-	text("percent", 349,460);
-	text("6 = ", 312, 470);
-	text("percent", 349,470);
+	text("1 = " + ((int)(diceResult1/numOfDice*100)) + " percent", 100, 450);
+	text("")
+	text("2 = " + ((int)(diceResult2/numOfDice*100)) + " percent", 100, 460);
+	text("3 = " + ((int)(diceResult3/numOfDice*100)) + " percent", 100, 470);
+	text("4 = " + ((int)(diceResult4/numOfDice*100)) + " percent", 312, 450);
+	text("5 = " + ((int)(diceResult5/numOfDice*100)) + " percent", 312, 460);
+	text("6 = " + ((int)(diceResult6/numOfDice*100)) + " percent", 312, 470);
 }
 void mousePressed()
 {
+	c1 = 0;
+	c2 = 0;
+	dieX = 25;
+	dieY = 25;
+	numOfDice = 0;
+	diceResult1 = 0;
+	diceResult2 = 0;
+	diceResult3 = 0;
+	diceResult4 = 0;
+	diceResult5 = 0;
+	diceResult6 = 0;
 	redraw();
 }
 class Die //models one single dice cube
@@ -88,13 +75,13 @@ class Die //models one single dice cube
 	}
 	void roll()
 	{
-		number = (int)(Math.random()*6+1);
+		number = (int)(Math.random()*6+1); //your code here
 	}
 	void show()
 	{
 		fill(255);
-		rect(myX,myY,50,50);
-		fill((int)(Math.random()*254+1),(int)(Math.random()*254+1),(int)(Math.random()*254+1));
+		rect(myX,myY,50,50); //your code here
+		fill(255,0,0);
 		if (number == 1)
 		{
 			diceResult1++;
